@@ -1,0 +1,107 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    border: none;
+    outline: none;
+
+    font-family: 'Manrope', sans-serif;
+}
+
+html {
+    font-size: 62.5%; /* Will make 1rem = 10px */
+}
+
+body {
+    font-size: 1.4rem; /* font-size: 14px; */
+    background-color: #F4F4FC;
+    /* color: ; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 200;
+    margin-bottom: 4rem;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.1);
+}
+
+form {
+    background: #F4F4FC;
+    padding: 4rem;
+    border: 5px solid #F4F4FC;
+    border-radius: 10px;
+    box-shadow: -10px -10px 20px rgba(255,255,255,0.8),
+                10px 10px 20px rgba(0,0,0,0.1),
+                inset 2px 2px 5px rgba(0,0,0,0.05),
+                inset -2px -2px 5px rgba(255,255,255,0.8);
+}
+
+form * {
+    display: block;
+}
+
+input {
+    padding: 1rem;
+    background: #F4F4FC;
+    font-weight: 800;
+    box-shadow: 0 6px 6px -6px rgba(0,0,0,0.15);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+label {
+    color: rgba(0,0,0,0.3);
+    padding: 1rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 3;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    bottom: 4rem;
+    left: 1rem;
+    transition: all 0.5s ease-in-out;
+}
+
+input:active, input:focus {
+    box-shadow: 0 6px 6px -6px rgba(10, 101, 239, 0.8);
+}
+
+input:active+label, 
+input:focus+label{
+    bottom: 1rem;
+    left: 1rem;
+    color: rgba(10, 101, 239, 0.9);
+    transform: scale(0.7);
+    transform-origin: left center;
+}
+
+.hid {
+    z-index: -1;
+}
+
+#submit {
+    padding: 1rem 2rem;
+    background: linear-gradient(to bottom right, #38A5DD, #0A65EF);
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin: auto;
+    text-transform: uppercase;
+    border-radius: 4px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.9),
+                5px 5px 10px rgba(10, 101, 239, 0.3);
+    transition: all 0.5s ease-in-out;
+}
+
+#submit:focus, 
+#submit:active {
+    padding: 1rem 2.5rem;
+}
