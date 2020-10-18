@@ -1,15 +1,11 @@
 <?php
 
-if (isset($_POST["login"])) {
+require_once "Database.php";
 
+if (isset($_POST["login"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
-
-    if ($username == "admin" && $password == "123") {
-        header("Location: admin.php");
-    } else {
-        $salah = true;
-    }
+    $DB->adminLogin($username, $password);
 }
 
 ?>
@@ -22,7 +18,7 @@ if (isset($_POST["login"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
-    <title>Aryak Web</title>
+    <title>Simple Login</title>
 </head>
 
 <body>
@@ -32,8 +28,8 @@ if (isset($_POST["login"])) {
         <form action="" method="post">
             <div class="title">
                 <h1>Login Here</h1>
-                <?php if (isset($salah)) { ?>
-                    <p>Username/Password Salah</p>
+                <?php if ($DB->loginFailed) { ?>
+                    <p style="color: red;">Username/Password wrong</p>
                 <?php } ?>
             </div>
             <div class="input">
